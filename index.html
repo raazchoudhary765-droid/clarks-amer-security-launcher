@@ -6,8 +6,8 @@
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0">
 
-  <meta name="description"
-        content="Clarks Amer Security Management System">
+  <meta name="theme-color"
+        content="#2b2119">
 
   <title>Clarks Amer Security</title>
 
@@ -21,145 +21,333 @@
     body {
       min-height: 100vh;
       font-family: Arial, Helvetica, sans-serif;
+
       background:
-        linear-gradient(rgba(20, 12, 7, 0.72), rgba(20, 12, 7, 0.88)),
-        radial-gradient(circle at top, #8b6a3e, #1b120c 70%);
-      color: #ffffff;
+        radial-gradient(
+          circle at top,
+          #4a3828 0%,
+          #30251c 38%,
+          #211914 100%
+        );
+
+      color: white;
+
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
+
       padding: 20px;
     }
 
     .container {
       width: 100%;
       max-width: 560px;
+
+      min-height: 700px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(69, 53, 40, 0.98),
+          rgba(38, 29, 22, 0.98)
+        );
+
+      border: 1px solid rgba(255, 255, 255, 0.22);
+
+      border-radius: 24px;
+
+      padding: 28px 30px 32px;
+
+      box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.55),
+        inset 0 1px 0 rgba(255,255,255,0.08);
+
       text-align: center;
+
+      position: relative;
+
+      overflow: hidden;
     }
 
-    .card {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      border-radius: 24px;
-      padding: 40px 30px;
-      backdrop-filter: blur(15px);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+    .container::before {
+      content: "";
+
+      position: absolute;
+
+      top: -180px;
+      left: 50%;
+
+      width: 420px;
+      height: 420px;
+
+      transform: translateX(-50%);
+
+      background: radial-gradient(
+        circle,
+        rgba(218, 161, 35, 0.16),
+        transparent 70%
+      );
+
+      pointer-events: none;
+    }
+
+    /* =========================
+       CLARKS AMER LOGO
+       ========================= */
+
+    .logo-wrapper {
+      width: 100%;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      margin-bottom: 12px;
+
+      position: relative;
+      z-index: 2;
     }
 
     .logo {
-      width: 88px;
-      height: 88px;
-      margin: 0 auto 20px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(145deg, #d4af37, #8f6b1f);
-      font-size: 42px;
-      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.35);
+      width: 100%;
+      max-width: 430px;
+
+      height: auto;
+
+      display: block;
+
+      object-fit: contain;
+
+      filter:
+        drop-shadow(0 5px 8px rgba(0,0,0,0.35))
+        drop-shadow(0 0 10px rgba(218,161,35,0.18));
     }
 
-    h1 {
-      font-size: 28px;
+    /* =========================
+       TITLE
+       ========================= */
+
+    .title {
+      font-size: 30px;
+
+      font-weight: 800;
+
       letter-spacing: 1px;
-      margin-bottom: 8px;
+
+      margin-top: 6px;
+
+      color: #ffffff;
+
+      text-shadow:
+        0 2px 4px rgba(0,0,0,0.45);
     }
 
     .subtitle {
-      color: #e4d8c4;
-      font-size: 15px;
-      margin-bottom: 32px;
+      margin-top: 8px;
+
+      font-size: 16px;
+
+      color: #e9dfd2;
+
       line-height: 1.5;
     }
 
+    .location {
+      margin-top: 3px;
+
+      font-size: 16px;
+
+      color: #e9dfd2;
+    }
+
+    /* =========================
+       BUTTONS
+       ========================= */
+
     .buttons {
+      margin-top: 36px;
+
       display: flex;
+
       flex-direction: column;
+
       gap: 15px;
     }
 
     .btn {
+      width: 100%;
+
+      min-height: 64px;
+
+      border-radius: 15px;
+
       display: flex;
+
       align-items: center;
+
       justify-content: center;
-      min-height: 58px;
-      padding: 14px 20px;
-      border-radius: 14px;
+
+      gap: 15px;
+
       text-decoration: none;
-      color: #ffffff;
-      font-size: 16px;
-      font-weight: 700;
-      letter-spacing: 0.4px;
-      border: 1px solid rgba(255,255,255,0.15);
-      transition: 0.2s ease;
+
+      color: white;
+
+      font-size: 17px;
+
+      font-weight: 800;
+
+      letter-spacing: 0.3px;
+
+      border: 1px solid rgba(255,255,255,0.22);
+
       cursor: pointer;
+
+      transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        filter 0.18s ease;
     }
 
     .btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+
+      filter: brightness(1.08);
+
+      box-shadow:
+        0 10px 25px rgba(0,0,0,0.28);
     }
 
-    .guard {
-      background: linear-gradient(135deg, #7b4b1f, #b8863b);
-    }
-
-    .management {
-      background: linear-gradient(135deg, #263b52, #426887);
-    }
-
-    .open {
-      background: linear-gradient(135deg, #4d3a20, #77602e);
-    }
-
-    .install {
-      background: rgba(255,255,255,0.10);
-      border: 1px solid rgba(212,175,55,0.5);
+    .btn:active {
+      transform: translateY(1px);
     }
 
     .icon {
-      font-size: 23px;
-      margin-right: 12px;
+      font-size: 24px;
+
+      width: 32px;
+
+      text-align: center;
     }
 
-    .note {
-      margin-top: 25px;
-      padding: 14px;
-      border-radius: 12px;
-      background: rgba(0,0,0,0.22);
-      color: #d8ccb9;
-      font-size: 12px;
-      line-height: 1.5;
+    /* OPEN APP */
+
+    .open {
+      background:
+        linear-gradient(
+          135deg,
+          #6b5025,
+          #8a6a2e
+        );
+
+      border-color: rgba(221,175,72,0.55);
+
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.08);
     }
+
+    /* GUARD */
+
+    .guard {
+      background:
+        linear-gradient(
+          135deg,
+          #92541f,
+          #c08332
+        );
+
+      border-color: rgba(239,175,77,0.45);
+    }
+
+    /* MANAGEMENT */
+
+    .management {
+      background:
+        linear-gradient(
+          135deg,
+          #29445f,
+          #477294
+        );
+
+      border-color: rgba(118,176,222,0.45);
+    }
+
+    /* INSTALL */
+
+    .install {
+      background:
+        linear-gradient(
+          135deg,
+          #39332e,
+          #50483f
+        );
+
+      border-color: rgba(214,168,66,0.55);
+    }
+
+    /* =========================
+       FOOTER
+       ========================= */
 
     .footer {
-      margin-top: 25px;
-      color: #bdb2a4;
+      margin-top: 28px;
+
       font-size: 12px;
+
+      color: #bfb3a5;
+
       line-height: 1.6;
     }
 
-    .status {
-      display: none;
-      margin-top: 18px;
-      padding: 12px;
-      border-radius: 10px;
-      background: rgba(255,255,255,0.1);
-      color: #f0dfbd;
-      font-size: 13px;
+    .footer strong {
+      color: #dfbd72;
     }
 
-    @media (max-width: 480px) {
-      .card {
-        padding: 30px 20px;
+    /* =========================
+       MOBILE
+       ========================= */
+
+    @media (max-width: 600px) {
+
+      body {
+        padding: 10px;
       }
 
-      h1 {
+      .container {
+        min-height: auto;
+
+        padding: 22px 18px 26px;
+
+        border-radius: 20px;
+      }
+
+      .logo {
+        max-width: 360px;
+      }
+
+      .title {
         font-size: 24px;
       }
 
-      .btn {
+      .subtitle,
+      .location {
         font-size: 14px;
+      }
+
+      .buttons {
+        margin-top: 28px;
+
+        gap: 12px;
+      }
+
+      .btn {
+        min-height: 58px;
+
+        font-size: 15px;
+      }
+
+      .icon {
+        font-size: 21px;
       }
     }
   </style>
@@ -167,100 +355,119 @@
 
 <body>
 
-  <div class="container">
+  <main class="container">
 
-    <div class="card">
+    <!-- =================================
+         ACTUAL CLARKS AMER LOGO
+         ================================= -->
 
-      <div class="logo">
-        🛡️
-      </div>
+    <div class="logo-wrapper">
 
-      <h1>CLARKS AMER SECURITY</h1>
-
-      <div class="subtitle">
-        Hotel Security Management System<br>
-        Jaipur
-      </div>
-
-      <div class="buttons">
-
-        <!-- OPEN NORMAL APP -->
-        <a
-          class="btn open"
-          href="clarksamer://open"
-          onclick="showStatus('Opening Clarks Amer Security App...')">
-
-          <span class="icon">🔐</span>
-          OPEN SECURITY APP
-        </a>
-
-        <!-- SECURITY GUARD LOGIN -->
-        <a
-          class="btn guard"
-          href="clarksamer://guard"
-          onclick="showStatus('Opening Security Guard Login...')">
-
-          <span class="icon">🛡️</span>
-          SECURITY GUARD LOGIN
-        </a>
-
-        <!-- MANAGEMENT LOGIN -->
-        <a
-          class="btn management"
-          href="clarksamer://management"
-          onclick="showStatus('Opening Management Login...')">
-
-          <span class="icon">👔</span>
-          MANAGEMENT LOGIN
-        </a>
-
-        <!-- INSTALLATION -->
-<a class="btn install"
-   href="https://github.com/raazchoudhary765-droid/clarks-amer-security-launcher/releases/download/v1.0.0/Clarks_Amer_Security_Setup_v1.0.1.exe">
-  <span class="icon">💻</span>
-  WINDOWS APP INSTALLATION
-</a>
-      </div>
-
-      <div id="status" class="status"></div>
-
-      <div class="note">
-        <strong>Windows App Users</strong><br>
-        The Clarks Amer Security App must be installed
-        on this Windows computer before using the
-        Security Guard or Management launch buttons.
-      </div>
-
-      <div class="footer">
-        Clarks Amer Hotel, Jaipur<br>
-        Security Management System<br><br>
-        Designed & Developed by Rajkumar Choudhary
-      </div>
+      <img
+        src="clarks_amer_logo_transparent.png"
+        alt="Clarks Amer Hotel & Brij Convention Centre"
+        class="logo"
+      >
 
     </div>
 
-  </div>
 
-  <script>
+    <!-- =================================
+         SECURITY SYSTEM TITLE
+         ================================= -->
 
-    function showStatus(message) {
-      const status = document.getElementById("status");
+    <h1 class="title">
+      CLARKS AMER SECURITY
+    </h1>
 
-      status.innerText = message;
-      status.style.display = "block";
+    <div class="subtitle">
+      Hotel Security Management System
+    </div>
 
-      setTimeout(function () {
-        status.style.display = "none";
-      }, 5000);
-    }
+    <div class="location">
+      Jaipur
+    </div>
 
-    function showInstallMessage() {
-      showStatus(
-        "Windows application installation package will be available here."
-      );
-    }
 
-  </script>
+    <!-- =================================
+         APPLICATION BUTTONS
+         ================================= -->
+
+    <div class="buttons">
+
+      <!-- OPEN SECURITY APP -->
+
+      <a
+        class="btn open"
+        href="clarksamer://open"
+      >
+        <span class="icon">🔐</span>
+
+        <span>
+          OPEN SECURITY APP
+        </span>
+      </a>
+
+
+      <!-- SECURITY GUARD -->
+
+      <a
+        class="btn guard"
+        href="clarksamer://guard"
+      >
+        <span class="icon">🛡️</span>
+
+        <span>
+          SECURITY GUARD LOGIN
+        </span>
+      </a>
+
+
+      <!-- MANAGEMENT -->
+
+      <a
+        class="btn management"
+        href="clarksamer://management"
+      >
+        <span class="icon">👔</span>
+
+        <span>
+          MANAGEMENT LOGIN
+        </span>
+      </a>
+
+
+      <!-- WINDOWS INSTALLATION -->
+
+      <a
+        class="btn install"
+        href="https://github.com/raazchoudhary765-droid/clarks-amer-security-launcher/releases/download/v1.0.0/Clarks_Amer_Security_Setup_v1.0.1.exe"
+      >
+        <span class="icon">💻</span>
+
+        <span>
+          WINDOWS APP INSTALLATION
+        </span>
+      </a>
+
+    </div>
+
+
+    <!-- =================================
+         FOOTER
+         ================================= -->
+
+    <div class="footer">
+
+      <strong>Clarks Amer Security</strong><br>
+
+      Hotel Security Management System<br>
+
+      Jaipur
+
+    </div>
+
+  </main>
 
 </body>
 </html>
