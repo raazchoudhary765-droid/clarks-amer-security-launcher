@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="Clarks Amer Security Management System">
+
+  <title>Clarks Amer Security</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        linear-gradient(rgba(20, 12, 7, 0.72), rgba(20, 12, 7, 0.88)),
+        radial-gradient(circle at top, #8b6a3e, #1b120c 70%);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 560px;
+      text-align: center;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 24px;
+      padding: 40px 30px;
+      backdrop-filter: blur(15px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+    }
+
+    .logo {
+      width: 88px;
+      height: 88px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(145deg, #d4af37, #8f6b1f);
+      font-size: 42px;
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.35);
+    }
+
+    h1 {
+      font-size: 28px;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      color: #e4d8c4;
+      font-size: 15px;
+      margin-bottom: 32px;
+      line-height: 1.5;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 58px;
+      padding: 14px 20px;
+      border-radius: 14px;
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      border: 1px solid rgba(255,255,255,0.15);
+      transition: 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
+
+    .guard {
+      background: linear-gradient(135deg, #7b4b1f, #b8863b);
+    }
+
+    .management {
+      background: linear-gradient(135deg, #263b52, #426887);
+    }
+
+    .open {
+      background: linear-gradient(135deg, #4d3a20, #77602e);
+    }
+
+    .install {
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(212,175,55,0.5);
+    }
+
+    .icon {
+      font-size: 23px;
+      margin-right: 12px;
+    }
+
+    .note {
+      margin-top: 25px;
+      padding: 14px;
+      border-radius: 12px;
+      background: rgba(0,0,0,0.22);
+      color: #d8ccb9;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .footer {
+      margin-top: 25px;
+      color: #bdb2a4;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .status {
+      display: none;
+      margin-top: 18px;
+      padding: 12px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.1);
+      color: #f0dfbd;
+      font-size: 13px;
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        padding: 30px 20px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      .btn {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="card">
+
+      <div class="logo">
+        🛡️
+      </div>
+
+      <h1>CLARKS AMER SECURITY</h1>
+
+      <div class="subtitle">
+        Hotel Security Management System<br>
+        Jaipur
+      </div>
+
+      <div class="buttons">
+
+        <!-- OPEN NORMAL APP -->
+        <a
+          class="btn open"
+          href="clarksamer://open"
+          onclick="showStatus('Opening Clarks Amer Security App...')">
+
+          <span class="icon">🔐</span>
+          OPEN SECURITY APP
+        </a>
+
+        <!-- SECURITY GUARD LOGIN -->
+        <a
+          class="btn guard"
+          href="clarksamer://guard"
+          onclick="showStatus('Opening Security Guard Login...')">
+
+          <span class="icon">🛡️</span>
+          SECURITY GUARD LOGIN
+        </a>
+
+        <!-- MANAGEMENT LOGIN -->
+        <a
+          class="btn management"
+          href="clarksamer://management"
+          onclick="showStatus('Opening Management Login...')">
+
+          <span class="icon">👔</span>
+          MANAGEMENT LOGIN
+        </a>
+
+        <!-- INSTALLATION -->
+        <a
+          class="btn install"
+          href="#"
+          onclick="showInstallMessage(); return false;">
+
+          <span class="icon">💻</span>
+          WINDOWS APP INSTALLATION
+        </a>
+
+      </div>
+
+      <div id="status" class="status"></div>
+
+      <div class="note">
+        <strong>Windows App Users</strong><br>
+        The Clarks Amer Security App must be installed
+        on this Windows computer before using the
+        Security Guard or Management launch buttons.
+      </div>
+
+      <div class="footer">
+        Clarks Amer Hotel, Jaipur<br>
+        Security Management System<br><br>
+        Designed & Developed by Rajkumar Choudhary
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+
+    function showStatus(message) {
+      const status = document.getElementById("status");
+
+      status.innerText = message;
+      status.style.display = "block";
+
+      setTimeout(function () {
+        status.style.display = "none";
+      }, 5000);
+    }
+
+    function showInstallMessage() {
+      showStatus(
+        "Windows application installation package will be available here."
+      );
+    }
+
+  </script>
+
+</body>
+</html>
