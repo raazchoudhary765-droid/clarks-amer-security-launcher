@@ -468,6 +468,31 @@
     </div>
 
   </main>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
+    const params = new URLSearchParams(window.location.search);
+    const action = params.get("open");
+
+    if (!action) return;
+
+    // Small delay so the launcher page loads first
+    setTimeout(function () {
+
+        if (action === "app") {
+            window.location.href = "clarksamer://open";
+        }
+
+        if (action === "guard") {
+            window.location.href = "clarksamer://guard";
+        }
+
+        if (action === "management") {
+            window.location.href = "clarksamer://management";
+        }
+
+    }, 500);
+});
+</script>
 </body>
 </html>
